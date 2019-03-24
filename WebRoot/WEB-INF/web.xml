@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" 
+	xmlns="http://java.sun.com/xml/ns/javaee" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+  <display-name></display-name>
+   <!-- filter配置 -->
+  <filter>
+  <filter-name>EncodingFilter</filter-name>
+  <filter-class>com.wust.filter.EncodingFilter</filter-class>
+  
+  <init-param>
+  		<param-name>charset</param-name>
+  		<param-value>UTF-8</param-value>
+  </init-param>
+  </filter>
+  
+  <filter-mapping>
+  <filter-name>EncodingFilter</filter-name>
+  <url-pattern>/*</url-pattern> <!-- 服务器端所有请求 -->      
+  </filter-mapping>
+  
+  <filter>
+    <filter-name>RoleFilter</filter-name>
+    <filter-class>com.wust.filter.RoleFilter</filter-class>
+  </filter>
+  
+  <filter-mapping>
+    <filter-name>RoleFilter</filter-name>
+  	<url-pattern>/admin/*</url-pattern>  <!-- 基于/admin/下面所有请求执行该过滤器 -->
+  </filter-mapping>
+  
+  
+  <servlet>
+    <servlet-name>NewsServlet</servlet-name>
+    <servlet-class>com.wust.servlet.NewsServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>NewAdminServlet</servlet-name>
+    <servlet-class>com.wust.servlet.NewAdminServlet</servlet-class>
+  </servlet>
+  
+  <servlet>
+    <servlet-name>ImageServlet</servlet-name>
+    <servlet-class>com.wust.servlet.ImageServlet</servlet-class>
+  </servlet>
+  
+  <servlet>
+    <servlet-name>LoginServlet</servlet-name>
+    <servlet-class>com.wust.servlet.LoginServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>UploadFileServlet</servlet-name>
+    <servlet-class>com.wust.servlet.UploadFileServlet</servlet-class>
+  </servlet>
+<servlet>
+    <servlet-name>UserAdminServlet</servlet-name>
+    <servlet-class>com.wust.servlet.UserAdminServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>CommentServlet</servlet-name>
+    <servlet-class>com.wust.servlet.CommentServlet</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>SendEmailServlet</servlet-name>
+    <servlet-class>com.wust.servlet.SendEmailServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>RegistServlet</servlet-name>
+    <servlet-class>com.wust.servlet.RegistServlet</servlet-class>
+  </servlet>
+<servlet>
+    <servlet-name>TypeAdminServlet</servlet-name>
+    <servlet-class>com.wust.servlet.TypeAdminServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>NoticeAdminServlet</servlet-name>
+    <servlet-class>com.wust.servlet.NoticeAdminServlet</servlet-class>
+  </servlet>
+   <servlet>
+    <servlet-name>UserServlet</servlet-name>
+    <servlet-class>com.wust.servlet.UserServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>HomeNewsServlet</servlet-name>
+    <servlet-class>com.wust.servlet.HomeNewsServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>DetailNewsServlet</servlet-name>
+    <servlet-class>com.wust.servlet.DetailNewsServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>UserLoginServlet</servlet-name>
+    <servlet-class>com.wust.servlet.UserLoginServlet</servlet-class>
+  </servlet>
+
+
+
+
+
+
+
+
+
+ <servlet-mapping>
+    <servlet-name>UserAdminServlet</servlet-name>
+    <url-pattern>/admin/userAdmin</url-pattern>
+  </servlet-mapping>
+    
+  <servlet-mapping>
+    <servlet-name>UserServlet</servlet-name>
+    <url-pattern>/user</url-pattern>
+  </servlet-mapping>
+  
+
+ <servlet-mapping>
+    <servlet-name>NewsServlet</servlet-name>
+    <url-pattern>/admin/NewsServlet</url-pattern>
+  </servlet-mapping>
+ 
+  <servlet-mapping>
+    <servlet-name>ImageServlet</servlet-name>
+    <url-pattern>/image</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+    <servlet-name>LoginServlet</servlet-name>
+    <url-pattern>/servlet/LoginServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>UploadFileServlet</servlet-name>
+    <url-pattern>/servlet/UploadFileServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>CommentServlet</servlet-name>
+    <url-pattern>/admin/CommentServlet</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>SendEmailServlet</servlet-name>
+    <url-pattern>/SendEmailServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>RegistServlet</servlet-name>
+    <url-pattern>/RegistServlet</url-pattern>
+  </servlet-mapping>	
+  <servlet-mapping>
+    <servlet-name>TypeAdminServlet</servlet-name>
+    <url-pattern>/admin/typeAdmin</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>NoticeAdminServlet</servlet-name>
+    <url-pattern>/admin/noticeAdmin</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>HomeNewsServlet</servlet-name>
+    <url-pattern>/servlet/HomeNewsServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>DetailNewsServlet</servlet-name>
+    <url-pattern>/servlet/DetailNewsServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>UserLoginServlet</servlet-name>
+    <url-pattern>/UserLoginServlet</url-pattern>
+  </servlet-mapping>
+  <welcome-file-list>
+    <welcome-file>userindex.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>

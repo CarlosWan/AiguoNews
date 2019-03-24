@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="comnews"
+  id="myeclipse.1548293794411"
+  context-root="/comnews"
+  j2ee-spec="5.0"
+  archive="comnews.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+

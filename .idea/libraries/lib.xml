@@ -1,0 +1,24 @@
+<component name="libraryTable">
+  <library name="lib">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/WebRoot/WEB-INF/lib/log4j-1.2.16.jar!/" />
+      <root url="jar://$PROJECT_DIR$/WebRoot/WEB-INF/lib/mail.jar!/" />
+      <root url="jar://$PROJECT_DIR$/WebRoot/WEB-INF/lib/c3p0-oracle-thin-extras-0.9.5.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/WebRoot/WEB-INF/lib/smartupload.jar!/" />
+      <root url="jar://$PROJECT_DIR$/WebRoot/WEB-INF/lib/jstl.jar!/" />
+      <root url="jar://$PROJECT_DIR$/WebRoot/WEB-INF/lib/commons-email-1.5.jar!/" />
+      <root url="jar://$PROJECT_DIR$/WebRoot/WEB-INF/lib/c3p0-0.9.5.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/WebRoot/WEB-INF/lib/commons-net-3.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/WebRoot/WEB-INF/lib/servlet-api.jar!/" />
+      <root url="jar://$PROJECT_DIR$/WebRoot/WEB-INF/lib/mchange-commons-java-0.2.11.jar!/" />
+      <root url="jar://$PROJECT_DIR$/WebRoot/WEB-INF/lib/commons-email-1.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/WebRoot/WEB-INF/lib/mysql-connector-java-commercial-5.1.25-bin.jar!/" />
+      <root url="jar://$PROJECT_DIR$/WebRoot/WEB-INF/lib/standard.jar!/" />
+      <root url="jar://$PROJECT_DIR$/WebRoot/WEB-INF/lib/commons-logging-1.1.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/WebRoot/WEB-INF/lib/activation.jar!/" />
+      <root url="jar://$PROJECT_DIR$/WebRoot/WEB-INF/lib/javax.mail.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

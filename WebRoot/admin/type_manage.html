@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>新闻中国后台管理</title>
+		<meta charset="utf-8">
+		<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+		<!--让 Bootstrap 开发的网站对移动设备友好，确保适当的绘制和触屏缩放-->
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+		<link href="../lib/font-awesome/css/font-awesome.css" rel="stylesheet">
+		<!--引入Bootstrap-->
+		<link href="../css/bootstrap.min.css" rel="stylesheet">
+		<!-- HTML5 Shim 和 Respond.js 用于让 IE8 支持 HTML5元素和媒体查询 -->
+		<!-- 注意： 如果通过 file://  引入 Respond.js 文件，则该文件无法起效果 -->
+		<!--[if lt IE 9]>
+	     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+	     <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+	  	<![endif]-->
+		<!--jQuery (Bootstrap的Javascript插件需要引入 jQuery)-->
+		<script src="../js/jquery2.0.0.min.js"></script>
+		<!--包含已编译的插件-->
+		<script src="../js/bootstrap.min.js"></script>
+		<script src="../js/myscript.js"></script>
+		<link rel="stylesheet" type="text/css" href="../stylesheets/theme.css">
+		<link rel="stylesheet" type="text/css" href="../stylesheets/premium.css">
+		<link href="../css/myindex.css" rel="stylesheet">
+		<style type="text/css">
+
+		</style>
+	</head>
+
+	<body onload="disptime()">
+		<!--顶部导航栏-->
+		<div id="myNavBar" class="navbar nav-default" style="background-color:#000;padding-right:30px;margin-bottom: 5px;" role="navigation">
+			<div class="navbar-header" style="line-height: 100%;">
+				<span class="h3" style="color:#fff;"><img src="../img/earth.png" style="width:48px;height:48px;padding-top:2px;"> 新闻中国后台管理系统</span>
+			</div>
+			<ul class="nav navbar-nav navbar-right">
+				<li>
+					<a href="#" class="text" style="color:#fff">
+						<span class="fa fa-user-circle"></span>&nbsp;
+						<span style="color:#fff;font-weight: bold;"> xxx </span> &nbsp;欢迎登录
+					</a>
+				</li>
+				<li>
+					<a href="#" id="myclock" class="text" style="color:#fff"></a>
+				</li>
+				<li>
+					<a href="../index.html" style="color:#fff">
+						<span class="glyphicon glyphicon-log-out"></span> 退出
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="container-fluid">
+			<div class="row clearfix">
+				<!--左边栏 导航-->
+				<div class="col-sm-2 col-md-2 column">
+					<ul id="main-nav" class="nav nav-tabs nav-stacked" style="">
+						<li>
+							<a href="manager_index.html">
+								<i class="glyphicon glyphicon-home"></i> 首页
+							</a>
+						</li>
+						<li>
+							<a href="#functionManage" id="collapseListGroupHeading1" class="nav-header collapsed" data-toggle="collapse">
+								<i class="glyphicon glyphicon-cog"></i> 功能管理
+								<span class="pull-right glyphicon glyphicon-chevron-up"></span>
+							</a>
+							<div id="functionManage" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="collapseListGroupHeading1">
+								<ul class="nav nav-pills nav-stacked secondmenu">
+									<li>
+										<a href="type_manage.html" style="color:#D58512"><i class="fa fa-th"></i> 主题管理</a>
+									</li>
+									<li>
+										<a href="news_manage.html"><i class="fa fa-newspaper-o"></i> 新闻管理</a>
+									</li>
+									<li>
+										<a href="#"><i class="fa fa-bullhorn"></i> 公告管理</a>
+									</li>
+									<li>
+										<a href="#"><i class="fa fa-comment"></i> 评论管理</a>
+									</li>
+								</ul>
+							</div>
+						</li>
+						<li>
+							<a href="#systemSetting" id="collapseListGroupHeading2" class="nav-header collapsed" data-toggle="collapse">
+								<i class="glyphicon glyphicon-list"></i> 系统管理
+								<span class="pull-right glyphicon glyphicon-chevron-down"></span>
+							</a>
+							<div id="systemSetting" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading2">
+								<ul class="nav nav-pills nav-stacked secondmenu">
+									<li>
+										<a href="user_manage.html"><i class="fa fa-user"></i> 用户管理</a>
+									</li>
+									<li>
+										<a href="#"><i class="fa fa-edit"></i> 系统日志</a>
+									</li>
+								</ul>
+							</div>
+						</li>
+					
+					</ul>
+				</div>
+				<!--右边栏  主要显示区-->
+				<div id="col2" class="col-sm-10 col-md-10 column" data-spy="scroll" data-target="#myNavBar" 
+					data-offset="0" style="height:600px;overflow:auto;position:relative;">
+					<div id="nav" style="border-bottom: 1px solid #EEEEEE;">
+						<ul class="breadcrumb">
+							<li>
+								<span class="fa fa-tasks" style="vertical-align: middle;"></span>
+								<a rel="nofollow" href="javascript:void(0);">功能管理</a>
+							</li>
+							<li class="active">
+								主题管理
+							</li>
+						</ul>
+					</div>
+					<!--这里添加内容-->
+					<div class="panel panel-default" style="margin-top:5px;">
+						<div class="panel-heading">
+							<h3 class="panel-title">
+								查询条件
+							</h3>
+						</div>
+						<form class="form-horizontal">
+							<div class="panel-body">
+								<div class="col-md-8 column">
+									<div class="row clearfix">
+										<div class="form-group">
+											<label for="inputTypeName" class="col-sm-2 control-label">主题名称</label>
+											<div class="col-sm-6">
+												<input type="text" class="form-control" id="inputTypeName">
+											</div>
+											<div class="col-sm-4">
+												<button type="submit" class="btn btn-primary" onclick="">查   询</button>&nbsp;&nbsp;&nbsp;&nbsp;
+												<button type="reset" class="btn btn-default" onclick="">重   置</button>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</form>
+					</div>	
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h3 class="panel-title">
+								查询列表
+							</h3>
+						</div>
+						<div class="col-md-12 column" style="line-height: 40px;">
+							<div class="row clearfix">
+								<div class="col-md-9 column"></div>
+								<div class="col-md-3 column" style="text-align: right;">
+									<input type="button" value="添加" class="btn btn-default" 
+										onclick="javascript:location.href='add_type.html'"
+										style="border:1px solid #fff;color:#fff;background-color:#EC971F;">
+								</div>
+							</div>
+						</div>
+						<div class="panel-body">
+							<table class="table table-hover" align="center" style="margin-top:2px auto;width:90%;">
+								<thead>
+									<tr>
+										<th>序号</th>
+										<th>主题名称</th>
+										<th>描述</th>
+										<th>操作</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td scope="row">1</td>
+										<td>国际</td>
+										<td>关于国际最新动态...</td>
+										<td>
+											<a href="edit_type.html"><span class="fa fa-edit"></span></a>&nbsp;&nbsp;&nbsp;&nbsp;
+											<a href="#" data-toggle="modal" data-target="#deleteNewsType"><span class="fa fa-trash-o"></span></a>
+										</td>
+									</tr>
+									<tr>
+										<td scope="row">2</td>
+										<td>国内</td>
+										<td>国内时事最新报道....</td>
+										<td>
+											<a href="edit_type.html"><span class="fa fa-edit"></span></a>&nbsp;&nbsp;&nbsp;&nbsp;
+											<a href="#" data-toggle="modal" data-target="#deleteNewsType"><span class="fa fa-trash-o"></span></a>
+										</td>
+									</tr>
+									<tr>
+										<td scope="row">3</td>
+										<td>娱乐</td>
+										<td>娱乐圈...</td>
+										<td>
+											<a href="edit_type.html"><span class="fa fa-edit"></span></a>&nbsp;&nbsp;&nbsp;&nbsp;
+											<a href="#" data-toggle="modal" data-target="#deleteNewsType"><span class="fa fa-trash-o"></span></a>
+										</td>
+									</tr>
+									<tr>
+										<td scope="row">4</td>
+										<td>房产</td>
+										<td>最新房产动态...</td>
+										<td>
+											<a href="edit_type.html"><span class="fa fa-edit"></span></a>&nbsp;&nbsp;&nbsp;&nbsp;
+											<a href="#" data-toggle="modal" data-target="#deleteNewsType"><span class="fa fa-trash-o"></span></a>
+										</td>
+									</tr>
+									<tr>
+										<td scope="row">5</td>
+										<td>社会</td>
+										<td>报道社会民生...</td>
+										<td>
+											<a href="edit_type.html"><span class="fa fa-edit"></span></a>&nbsp;&nbsp;&nbsp;&nbsp;
+											<a href="#" data-toggle="modal" data-target="#deleteNewsType"><span class="fa fa-trash-o"></span></a>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+		
+		<!-- 模态框   信息删除确认 -->
+		<div class="modal fade" id="deleteNewsType">
+			<div class="modal-dialog">
+				<div class="modal-content message_align">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+						<h4 class="modal-title">提示</h4>
+					</div>
+					<div class="modal-body">
+						<!-- 隐藏需要删除的id -->
+						<input type="hidden" id="deletePersonId" />
+						<p>您确认要删除吗？</p>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+						<button type="button" class="btn btn-primary" id="deleteHaulBtn">确认删除</button>
+					</div>
+				</div>
+				<!-- /.modal-content -->
+			</div>
+			<!-- /.modal-dialog -->
+		</div>
+		
+		<!--设置菜单折叠更改图标脚本 -->
+		<script>
+			$(function() {
+				$(".nav-header").click(function(e) {
+					/*切换折叠指示图标*/
+					$(this).find("span").toggleClass("glyphicon-chevron-down");
+					$(this).find("span").toggleClass("glyphicon-chevron-up");
+				});
+			});
+		</script>
+		<script>
+			h = document.body.clientHeight;
+			if(document.body.clientHeight < document.documentElement.clientHeight) {
+				h = document.documentElement.clientHeight
+			}
+			colHeight = h - document.getElementById("col1").offsetTop;
+			document.getElementById("col1").style.height = colHeight + "px";
+			document.getElementById("col2").style.height = colHeight + "px";
+		</script>
+	</body>
+
+</html>
